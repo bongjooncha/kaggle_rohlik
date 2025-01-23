@@ -1,0 +1,90 @@
+calandar.csv
+
+Data columns (total 7 columns):
+ #   Column                  Non-Null Count  Dtype 
+---  ------                  --------------  ----- 
+ 0   date                    23016 non-null  object
+ 1   holiday_name            930 non-null    object
+ 2   holiday                 23016 non-null  int64 
+ 3   shops_closed            23016 non-null  int64 
+ 4   winter_school_holidays  23016 non-null  int64 
+ 5   school_holidays         23016 non-null  int64 
+ 6   warehouse               23016 non-null  object
+
+-------------------------
+
+inventory.csv
+
+Data columns (total 8 columns):
+ #   Column               Non-Null Count  Dtype 
+---  ------               --------------  ----- 
+ 0   unique_id            5432 non-null   int64 
+ 1   product_unique_id    5432 non-null   int64 
+ 2   name                 5432 non-null   object
+ 3   L1_category_name_en  5432 non-null   object
+ 4   L2_category_name_en  5432 non-null   object
+ 5   L3_category_name_en  5432 non-null   object
+ 6   L4_category_name_en  5432 non-null   object
+ 7   warehouse            5432 non-null   object
+
+-------------------------
+
+sales_test.csv
+
+Data columns (total 12 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   unique_id        47021 non-null  int64  
+ 1   date             47021 non-null  object 
+ 2   warehouse        47021 non-null  object 
+ 3   total_orders     47021 non-null  float64
+ 4   sell_price_main  47021 non-null  float64
+ 5   type_0_discount  47021 non-null  float64
+ 6   type_1_discount  47021 non-null  float64
+ 7   type_2_discount  47021 non-null  float64
+ 8   type_3_discount  47021 non-null  float64
+ 9   type_4_discount  47021 non-null  float64
+ 10  type_5_discount  47021 non-null  float64
+ 11  type_6_discount  47021 non-null  float64
+
+-------------------------
+
+sales_train.csv
+
+Data columns (total 14 columns):
+ #   Column           Dtype  
+---  ------           -----  
+ 0   unique_id        int64  
+ 1   date             object 
+ 2   warehouse        object 
+ 3   total_orders     float64
+ 4   sales            float64
+ 5   sell_price_main  float64
+ 6   availability     float64
+ 7   type_0_discount  float64
+ 8   type_1_discount  float64
+ 9   type_2_discount  float64
+ 10  type_3_discount  float64
+ 11  type_4_discount  float64
+ 12  type_5_discount  float64
+ 13  type_6_discount  float64
+
+-------------------------
+
+solution.csv
+
+Data columns (total 2 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   id         47021 non-null  object
+ 1   sales_hat  47021 non-null  int64 
+
+-------------------------
+
+test_weights.csv
+
+Data columns (total 2 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   unique_id  5390 non-null   int64  
+ 1   weight     5390 non-null   float64
