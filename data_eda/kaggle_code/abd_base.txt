@@ -1,0 +1,32 @@
+데이터 전처리 과정
+1. 전체 데이터 셋을 모두 merge.
+2. sales null인것 제거(실질적으로는 x) + availability,name열 삭제
+3. date()함수를 통해서 시간 데이터 pi형태로 변경
+
+
+데이터 학습
+
+사용 모델: LGBM
+seed: 42
+
+데이터 분할 수(n_splits): 5
+조기종료(early_stop): True
+분류 수(num_classes): 0(회귀시 0으로 설정)
+확률 예측(prob): False
+교차검증(fold_type): KF => K-Fold 교차 검증
+가중치(weights): weight
+TF_VEC(tf_vec): x
+
+
+Paramas(하이퍼 파라미터) - 
+트리 갯수(n_estimators):1811
+학습률(learning_rate): 0.28570714885887566
+트리 최대 깊이(max_depth): 14
+트리의 최대 리프 노드 수(num_leaves):  140
+cpu 코어수 (n-jobs): -1
+리프 노드가 되기 위한 데이터 수(min_child_samples): 19
+트리 학습시 사용 데이터 비율(subsample):  0.7467983561008608
+트리 학습시 사용 피처 강도(colsample_bytree): 0.7174250836504598
+l1 정규화 강도(lambda_l1): 5.3994844097874335
+l2 정규화 강도(lambda_l2): 1.5930522616241019
+최소 손실감소(min_gain_to_split): 0.21242177333881365
