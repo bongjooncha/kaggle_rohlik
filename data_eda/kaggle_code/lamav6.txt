@@ -1,0 +1,13 @@
+데이터 전처리 과정:
+    process_calendar()함수 -> 휴일을 좀더 세분화해서 전처리
+    - 각 창고 별로 데이터 split.(+날짜는 2020.08.01 이후로 통일)
+    - next_holiday_date: 다음 휴일까지 남은 기간 계산(현재 날짜 - 다음 휴일 날짜)
+    - next_shops_closed_date: 다음 물류 창고 멈추는 날까지 계산(현재 날짜 - 다음 휴무 일)
+    - day_after_closing: 휴무일 다음날 인경우 1 표기
+    - long_weekend: 이틀 연속 휴무인 경우 1 표기
+    - weekday: 요일별로 변환
+
+데이터 학습:
+    lightautoml 사용
+    - 최대 학습시간 3600초(1시간)
+    - Light GBM, CatBoost, linear_model 결과 lightGBM 선택

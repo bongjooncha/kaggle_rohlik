@@ -1,0 +1,4 @@
+데이터 전처리 과정:
+    - 모두 merge한뒤 unique_id_and_name으로 unique_id와 name을 한 column으로 합침
+    - na값을 가진 row drop(52개 drop)
+    - 

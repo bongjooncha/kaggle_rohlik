@@ -1,3 +1,4 @@
 data/
 venv/
 *.pkl
+try.py
