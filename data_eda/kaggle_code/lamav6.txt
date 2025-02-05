@@ -8,6 +8,87 @@
     - weekday: 요일별로 변환
 
 데이터 학습:
-    lightautoml 사용
+    LightAutoML의 TabularAutoML 사용: 데이터를 자동으로 학습하여 최적의 모델을 찾아줌
     - 최대 학습시간 3600초(1시간)
     - Light GBM, CatBoost, linear_model 결과 lightGBM 선택
+
+-------------------------------
+
+
+[23:36:17] Stdout logging level is INFO2.
+[23:36:17] Task: reg
+
+[23:36:17] Start automl preset with listed constraints:
+[23:36:17] - time: 3600.00 seconds
+[23:36:17] - CPU: 12 cores
+[23:36:17] - memory: 16 GB
+
+[23:36:17] Train data shape: (4007367, 30)
+
+[23:36:36] Layer 1 train process start. Time left 3581.19 secs
+[23:38:14] Start fitting Lvl_0_Pipe_0_Mod_0_LinearL2 ...
+[23:38:15] ===== Start working with fold 0 for Lvl_0_Pipe_0_Mod_0_LinearL2 =====
+[23:40:38] ===== Start working with fold 1 for Lvl_0_Pipe_0_Mod_0_LinearL2 =====
+[23:43:28] Time limit exceeded after calculating fold 1
+
+[23:43:28] Fitting Lvl_0_Pipe_0_Mod_0_LinearL2 finished. score = -5848.608184528893
+[23:43:28] Lvl_0_Pipe_0_Mod_0_LinearL2 fitting and predicting completed
+[23:43:28] Time left 3169.07 secs
+
+[23:45:31] Start fitting Lvl_0_Pipe_1_Mod_0_LightGBM ...
+[23:45:31] ===== Start working with fold 0 for Lvl_0_Pipe_1_Mod_0_LightGBM =====
+[23:50:28] ===== Start working with fold 1 for Lvl_0_Pipe_1_Mod_0_LightGBM =====
+[23:55:10] Time limit exceeded after calculating fold 1
+
+[23:55:10] Fitting Lvl_0_Pipe_1_Mod_0_LightGBM finished. score = -1508.923237294874
+[23:55:10] Lvl_0_Pipe_1_Mod_0_LightGBM fitting and predicting completed
+[23:55:10] Start hyperparameters optimization for Lvl_0_Pipe_1_Mod_1_Tuned_LightGBM ... Time budget is 1.00 secs
+Optimization Progress:   1%|          | 1/101 [05:46<9:38:06, 346.86s/it, best_trial=0, best_value=-1.37e+3]
+[00:00:57] Hyperparameters optimization for Lvl_0_Pipe_1_Mod_1_Tuned_LightGBM completed
+[00:00:57] The set of hyperparameters {'feature_fraction': 0.6872700594236812, 'num_leaves': 244, 'bagging_fraction': 0.8659969709057025, 'min_sum_hessian_in_leaf': 0.24810409748678125, 'reg_alpha': 2.5361081166471375e-07, 'reg_lambda': 2.5348407664333426e-07}
+ achieve -1371.6407 mse
+
+[00:00:58] Start fitting Lvl_0_Pipe_1_Mod_2_CatBoost ...
+[00:00:59] ===== Start working with fold 0 for Lvl_0_Pipe_1_Mod_2_CatBoost =====
+[00:01:42] ===== Start working with fold 1 for Lvl_0_Pipe_1_Mod_2_CatBoost =====
+[00:02:25] ===== Start working with fold 2 for Lvl_0_Pipe_1_Mod_2_CatBoost =====
+[00:03:08] ===== Start working with fold 3 for Lvl_0_Pipe_1_Mod_2_CatBoost =====
+[00:03:52] ===== Start working with fold 4 for Lvl_0_Pipe_1_Mod_2_CatBoost =====
+[00:04:35] ===== Start working with fold 5 for Lvl_0_Pipe_1_Mod_2_CatBoost =====
+[00:05:18] ===== Start working with fold 6 for Lvl_0_Pipe_1_Mod_2_CatBoost =====
+[00:06:02] ===== Start working with fold 7 for Lvl_0_Pipe_1_Mod_2_CatBoost =====
+[00:06:44] Fitting Lvl_0_Pipe_1_Mod_2_CatBoost finished. score = -3044.9115579232885
+[00:06:44] Lvl_0_Pipe_1_Mod_2_CatBoost fitting and predicting completed
+[00:06:44] Start hyperparameters optimization for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost ... Time budget is 202.19 secs
+Optimization Progress:   6%|▌         | 6/101 [04:05<1:04:43, 40.87s/it, best_trial=5, best_value=-2.89e+3]
+[00:10:50] Hyperparameters optimization for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost completed
+[00:10:50] The set of hyperparameters {'max_depth': 6, 'nan_mode': 'Min', 'l2_leaf_reg': 0.0021465011216654484, 'min_data_in_leaf': 1}
+ achieve -2891.6232 mse
+[00:10:50] Start fitting Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost ...
+
+[00:10:51] ===== Start working with fold 0 for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost =====
+[00:12:02] ===== Start working with fold 1 for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost =====
+[00:13:13] ===== Start working with fold 2 for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost =====
+[00:14:24] ===== Start working with fold 3 for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost =====
+[00:15:35] ===== Start working with fold 4 for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost =====
+[00:16:47] ===== Start working with fold 5 for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost =====
+[00:17:58] ===== Start working with fold 6 for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost =====
+[00:19:09] ===== Start working with fold 7 for Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost =====
+[00:20:12] Fitting Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost finished. score = -2782.9161553302147
+[00:20:12] Lvl_0_Pipe_1_Mod_3_Tuned_CatBoost fitting and predicting completed
+[00:20:12] Time left 965.24 secs
+
+[00:20:12] Time limit exceeded in one of the tasks. AutoML will blend level 1 models.
+
+[00:20:12] Layer 1 training completed.
+
+[00:20:12] Blending: optimization starts with equal weights. Score = -2782.8144777
+[00:20:20] Blending: iteration 0: score = -1508.9232373, weights = [0. 1. 0. 0.]
+[00:20:26] Blending: no improvements for score. Terminated.
+
+[00:20:26] Blending: best score = -1508.9232373, best weights = [0. 1. 0. 0.]
+[00:20:26] Automl preset training completed in 2648.92 seconds
+
+[00:20:26] Model description:
+Final prediction for new objects (level 0) = 
+	 1.00000 * (2 averaged models Lvl_0_Pipe_1_Mod_0_LightGBM) 
